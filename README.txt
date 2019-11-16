@@ -1,1 +1,1 @@
-TODO: add black holes and physics for planets and black holes
+TODO: add physics for planets and black holes
