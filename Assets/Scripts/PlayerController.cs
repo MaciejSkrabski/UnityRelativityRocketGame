@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     void FixedUpdate()
     {
+        
         float moveVertical = Input.GetAxis("Vertical");
         float turn = Input.GetAxis("Horizontal");
         Vector3 vertical = new Vector3(0.0f, 0.0f, moveVertical);
