@@ -14,7 +14,7 @@ public class GravitationalForce : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         pl = player.GetComponent<Rigidbody>();
-        
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     private void FixedUpdate()

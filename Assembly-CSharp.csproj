@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\CameraControll.cs" />
     <Compile Include="Assets\Scripts\GravitationalForce.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <None Include="Assets\Shaders\AlphaBlend.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/malbik/Documents/RollTheBall/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
