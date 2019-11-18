@@ -4,7 +4,6 @@ using UnityEngine;
 public class MinimapControll : MonoBehaviour
 {
     public Transform target;
-    public float smoothTime = 0.3F;
 
     public Vector3 offset;
 
