@@ -16,6 +16,6 @@ public class CameraControll : MonoBehaviour
         Vector3 targetPosition = target.TransformPoint(offset);
 
         // Smoothly move the camera towards that target position
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition+offset, ref velocity, smoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 }
