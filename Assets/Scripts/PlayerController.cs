@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public string finaltext="";
     public float maxdist;
     public float maxspeed;
+    private bool landed=false;
 
     private Rigidbody rb;
     void Objective()
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
         if (distance < maxdist && rb.velocity.x<maxspeed && rb.velocity.z<maxspeed)
         {
             finaltext = "Landed!";
+            landed = true;
         }
         
     }
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (landed) rb.constraints = RigidbodyConstraints.FreezeAll;
         Objective();
         float moveVertical = Input.GetAxis("Vertical");
         float turn = Input.GetAxis("Horizontal");
