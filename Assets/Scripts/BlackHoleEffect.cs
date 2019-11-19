@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 //https://www.youtube.com/watch?v=Yk8Rmf0ehHU
 
@@ -9,7 +10,7 @@ public class BlackHoleEffect : MonoBehaviour
 {
     public Shader shader;
     public Transform blackHole;
-    public float ratio; //aspect ratio of the screen
+    private float ratio; //aspect ratio of the screen
     public float radius; //size of the black hole
 
     private Camera cam;
@@ -50,11 +51,13 @@ public class BlackHoleEffect : MonoBehaviour
         if (shader && material && blackHole)
         {
             wtsp = cam.WorldToScreenPoint(blackHole.position); //WorldToScreenPoint
-
+            //if ()
+            Debug.Log(wtsp);
             //is the black hole in front of the cam?
             if(wtsp.z > 0)
             {
                 pos = new Vector2(wtsp.x / cam.pixelWidth, wtsp.y / cam.pixelHeight);
+                //Debug.Log(pos.ToString());
                 //apply shader parameters
                 _material.SetVector("_Position", pos);
                 _material.SetFloat("_Ratio", ratio);
