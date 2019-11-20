@@ -5,6 +5,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: Body
+    2100002: Windows
+    2100004: Black
+    2100006: Wings
+    2100008: Material
+    2100010: Engines_cover
+    2100012: Exosters
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Space ship
   externalObjects: {}
   materials:
     importMaterials: 1

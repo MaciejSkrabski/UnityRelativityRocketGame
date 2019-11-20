@@ -3,6 +3,19 @@ guid: 665a0c4345d877939972eb23612dd206
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Body
+    2100002: Windows
+    2100004: Black
+    2100006: Wings
+    2100008: Material
+    2100010: Engines_cover
+    2100012: Exosters
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Space ship
+    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +70,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
