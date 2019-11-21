@@ -37,7 +37,6 @@ public class LvlGenerator : MonoBehaviour
     {
         objectsum = planets + blackHoles + meteors;
         grid = new List<Vector3>();
-        List<int> l;
         var go = new GameObject();
         for (int i = -size; i <= size; i+=100)
         {
@@ -59,12 +58,15 @@ public class LvlGenerator : MonoBehaviour
 
     void ins(GameObject o, int n)
     {
-        int r;
-        for (int i = 0; i <= n; i++)
+        if (n > 0)
         {
-            r = Random.Range(0, grid.Count - 1);
-            Instantiate(o, grid[r], Quaternion.identity);
-            grid.RemoveAt(r);
+            int r;
+            for (int i = 0; i <= n; i++)
+            {
+                r = Random.Range(0, grid.Count - 1);
+                Instantiate(o, grid[r], Quaternion.identity);
+                grid.RemoveAt(r);
+            }
         }
     }
 

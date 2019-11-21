@@ -269,6 +269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 2465638627097723655, guid: 731c2a92405d22795b01df96d55e8703, type: 3}
+  health: 100
+  fuel: 100
   thrust: 5
   torque: 0.7
   finaltext: 
@@ -276,6 +278,8 @@ MonoBehaviour:
   maxspeed: 5
   Fireworks: {fileID: 5476755674454347585, guid: 189e45f8d01e6a0d5b8b895d72d5363a,
     type: 3}
+  fuelrefill: {fileID: 0}
+  gem: {fileID: 0}
 --- !u!54 &5052902367051930620
 Rigidbody:
   m_ObjectHideFlags: 0
