@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     public GameObject goal;
+    public float health;
+    public float fuel;
     public float thrust;
     public float torque;
     public string finaltext="";
@@ -11,6 +13,14 @@ public class PlayerController : MonoBehaviour
     public float maxspeed;
     private bool landed=false;
     public GameObject Fireworks;
+
+    //for colliders
+
+    public GameObject fuelrefill;
+    public GameObject gem;
+
+    GameObject[] enemies;
+    Rigidbody[] enemiesRB;
 
     private Rigidbody rb;
     void Objective()
@@ -26,6 +36,8 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
         goal = GameObject.Find("Finish");
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
@@ -55,5 +67,36 @@ public class PlayerController : MonoBehaviour
     {
         GameObject firework = Instantiate(Fireworks, position, this.transform.rotation);
         firework.GetComponent<ParticleSystem>().Play();
+    }
+
+    void doDamage()
+    {
+        
+        Rigidbody collidable;
+        collidable = FindClosestEnemy().GetComponent<Rigidbody>();
+        float force = (collidable.velocity.magnitude*rb.velocity.magnitude)*Mathf.Sin(Vector3.Angle(rb.velocity, collidable.velocity));
+        this.health-=force;
+        Debug.Log(this.health);
+        //based on difference of velocities
+    }
+
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
     }
 }

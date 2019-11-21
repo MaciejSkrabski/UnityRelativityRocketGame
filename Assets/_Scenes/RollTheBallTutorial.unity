@@ -780,97 +780,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007628035}
   m_CullTransparentMesh: 0
---- !u!1 &2084154566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2084154570}
-  - component: {fileID: 2084154569}
-  - component: {fileID: 2084154568}
-  - component: {fileID: 2084154567}
-  m_Layer: 8
-  m_Name: PlayerIcon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!135 &2084154567
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084154566}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &2084154568
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084154566}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: b75a442502ec16447a6da26bcf515b5a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &2084154569
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084154566}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2084154570
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084154566}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
-  m_LocalScale: {x: 50, y: 1, z: 50}
-  m_Children: []
-  m_Father: {fileID: 1395344210}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2140675412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1226,7 @@ PrefabInstance:
     - target: {fileID: 4347680808836869619, guid: fd49ae950fb9d204d8e4069c37c12f06,
         type: 3}
       propertyPath: smoothTime
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4347680808836869619, guid: fd49ae950fb9d204d8e4069c37c12f06,
         type: 3}
@@ -1398,42 +1307,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
-        type: 3}
-      propertyPath: Fireworks
-      value: 
-      objectReference: {fileID: 5476755674454347585, guid: 189e45f8d01e6a0d5b8b895d72d5363a,
-        type: 3}
-    - target: {fileID: 5052902367051930620, guid: 4c8cfec47e4070f4f9e674f591693e6b,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: planets
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: blackHoles
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: ps
-      value: 
-      objectReference: {fileID: 7123250019116408350, guid: 5e0a662375485ab41b9639457d405357,
-        type: 3}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: bhs
-      value: 
-      objectReference: {fileID: 2928862251243722543, guid: bba6c88670c35db409c607d9d47751e1,
-        type: 3}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: meteors
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
       propertyPath: size
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
+      propertyPath: planets
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
+      propertyPath: blackHoles
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
