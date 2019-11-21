@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     public GameObject fuelrefill;
     public GameObject gem;
 
-    GameObject[] enemies;
-    Rigidbody[] enemiesRB;
 
     private Rigidbody rb;
     void Objective()
@@ -36,8 +34,6 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
         goal = GameObject.Find("Finish");
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
@@ -62,6 +58,12 @@ public class PlayerController : MonoBehaviour
             Explode(this.transform.position);
         }
 
+        if (health<=0) 
+        {
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            this.finaltext = "Ship destroyed.";
+        }
+
     }
     void Explode(Vector3 position)
     {
@@ -69,34 +71,37 @@ public class PlayerController : MonoBehaviour
         firework.GetComponent<ParticleSystem>().Play();
     }
 
-    void doDamage()
+    void OnCollisionEnter(Collision collision) 
     {
-        
-        Rigidbody collidable;
-        collidable = FindClosestEnemy().GetComponent<Rigidbody>();
-        float force = (collidable.velocity.magnitude*rb.velocity.magnitude)*Mathf.Sin(Vector3.Angle(rb.velocity, collidable.velocity));
-        this.health-=force;
-        Debug.Log(this.health);
-        //based on difference of velocities
-    }
-
-    public GameObject FindClosestEnemy()
-    {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject go in gos)
+        if(collision.gameObject.CompareTag("Enemy"))
         {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
+            if(collision.gameObject.name == "Black Hole Position(Clone)")
             {
-                closest = go;
-                distance = curDistance;
+                this.health=0;
+                return;
             }
         }
-        return closest;
+        Rigidbody collidable;
+        collidable = collision.rigidbody;
+        float colv = Mathf.Pow(Mathf.Ceil(collidable.velocity.magnitude), 2);
+        float force;
+        float sinus = Mathf.Sin(Vector3.Angle(rb.velocity, collidable.velocity));
+        float vel = Mathf.Pow(Mathf.Ceil(rb.velocity.magnitude), 2);
+        Debug.Log("my velocity: ");
+        Debug.Log(vel);
+        Debug.Log("enemy velocity: ");
+            
+        
+        if (colv > 0) force = (colv*vel)*sinus;
+        else force = vel;
+        force=Mathf.Ceil(force);
+        
+        Debug.Log("force:");
+        Debug.Log(force);
+        this.health-=force;
+        Debug.Log("health:");
+        Debug.Log(this.health);
+    
     }
 }
+
