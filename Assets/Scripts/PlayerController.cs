@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,10 +15,30 @@ public class PlayerController : MonoBehaviour
     private bool landed=false;
     public GameObject Fireworks;
     private bool alive = true;
-    //for colliders
 
-    public GameObject fuelrefill;
-    public GameObject gem;
+    public int size;
+
+    [Range(0, 50)]
+    public int planets;
+    public GameObject ps;
+
+    [Range(0, 50)]
+    public int blackHoles;
+    public GameObject bhs;
+
+    [Range(0, 50)]
+    public int meteors;
+    public GameObject ms;
+
+    [Range(0, 50)]
+    public int fuelRefills;
+    public GameObject frs;
+
+    [Range(0, 50)]
+    public int gems;
+    public GameObject gs;
+
+    private List<Vector3> grid;
 
 
     private Rigidbody rb;
@@ -34,7 +55,25 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-        goal = GameObject.Find("Finish");
+                grid = new List<Vector3>();
+        var go = new GameObject();
+        for (int i = -size; i <= size; i+=100)
+        {
+            for (int j = -size; j <= size; j += 100)
+            {
+                if (i != 0 && j!=0)
+                {
+                    grid.Add(new Vector3(i, 0f, j));
+                }
+            }
+        }
+        
+        ins(goal, 1);
+        ins(ps, planets);
+        ins(bhs, blackHoles);
+        ins(ms, meteors);
+        ins(frs, fuelRefills);
+        ins(gs, gems);
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
@@ -42,7 +81,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (landed) rb.constraints = RigidbodyConstraints.FreezeAll;
-        Objective();
+        //Objective();
         if (alive & landed==false)
         {
             float moveVertical = Input.GetAxis("Vertical");
@@ -91,10 +130,10 @@ public class PlayerController : MonoBehaviour
         }
         Rigidbody collidable;
         collidable = collision.rigidbody;
-        float colv = Mathf.Pow(Mathf.Ceil(collidable.velocity.magnitude), 2);
+        float colv = Mathf.Ceil(collidable.velocity.magnitude);
         float force;
-        float sinus = Mathf.Sin(Vector3.Angle(rb.velocity, collidable.velocity));
-        float vel = Mathf.Pow(Mathf.Ceil(rb.velocity.magnitude), 2);
+        float sinus = Vector3.Angle(rb.velocity, collidable.velocity);
+        float vel = Mathf.Ceil(rb.velocity.magnitude);
         Debug.Log("my velocity: ");
         Debug.Log(vel);
         Debug.Log("enemy velocity: ");
@@ -110,6 +149,20 @@ public class PlayerController : MonoBehaviour
         Debug.Log("health:");
         Debug.Log(this.health);
     
+    }
+
+    void ins(GameObject o, int n)
+    {
+        if (n > 0)
+        {
+            int r;
+            for (int i = 1; i <= n; i++)
+            {
+                r = Random.Range(0, grid.Count - 1);
+                Instantiate(o, grid[r], Quaternion.identity);
+                grid.RemoveAt(r);
+            }
+        }
     }
 }
 

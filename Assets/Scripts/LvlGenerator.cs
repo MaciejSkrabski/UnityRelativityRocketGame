@@ -25,17 +25,14 @@ public class LvlGenerator : MonoBehaviour
     [Range(0, 50)]
     public int gems;
     public GameObject gs;
+    public GameObject finish;
 
-
-
-    private int objectsum=0;
 
     private List<Vector3> grid;
 
     // Start is called before the first frame update
     void Start()
     {
-        objectsum = planets + blackHoles + meteors;
         grid = new List<Vector3>();
         var go = new GameObject();
         for (int i = -size; i <= size; i+=100)
@@ -48,6 +45,9 @@ public class LvlGenerator : MonoBehaviour
                 }
             }
         }
+        int r = Random.Range(0, grid.Count - 1);
+        Instantiate(finish, grid[r], Quaternion.identity);
+        grid.RemoveAt(r);
 
         ins(ps, planets);
         ins(bhs, blackHoles);
@@ -61,7 +61,7 @@ public class LvlGenerator : MonoBehaviour
         if (n > 0)
         {
             int r;
-            for (int i = 0; i <= n; i++)
+            for (int i = 1; i <= n; i++)
             {
                 r = Random.Range(0, grid.Count - 1);
                 Instantiate(o, grid[r], Quaternion.identity);
