@@ -4,42 +4,69 @@ using UnityEngine;
 
 public class LvlGenerator : MonoBehaviour
 {
-    [Range(0, 13)]
-    public int numOfPlanets;
-    [Range(0, 5)]
-    public int numOfBlackHoles;
-    [Range(0, 10)]
-    public int numOfMeteors;
+    public int size;
+
+    [Range(0, 50)]
+    public int planets;
+    public GameObject ps;
+
+    [Range(0, 50)]
+    public int blackHoles;
+    public GameObject bhs;
+
+    [Range(0, 50)]
+    public int meteors;
+    public GameObject ms;
+
+    [Range(0, 50)]
+    public int fuelRefills;
+    public GameObject frs;
+
+    [Range(0, 50)]
+    public int gems;
+    public GameObject gs;
+
+
+
     private int objectsum=0;
 
-    private List<Vector2> grid;
+    private List<Vector3> grid;
 
     // Start is called before the first frame update
     void Start()
     {
-        objectsum = numOfPlanets + numOfBlackHoles + numOfMeteors;
-        grid = new List<Vector2>();
+        objectsum = planets + blackHoles + meteors;
+        grid = new List<Vector3>();
         List<int> l;
         var go = new GameObject();
-        for (int i = -3000; i <= 3000; i+=100)
+        for (int i = -size; i <= size; i+=100)
         {
-            for (int j = -3000; j <= 3000; j += 100)
+            for (int j = -size; j <= size; j += 100)
             {
                 if (i != 0 && j!=0)
                 {
-                    grid.Add(new Vector2(i, j));
-
+                    grid.Add(new Vector3(i, 0f, j));
                 }
             }
         }
 
-        Debug.Log(grid.ToString());
-        grid.Add(new Vector2(2f, 2f) );
+        ins(ps, planets);
+        ins(bhs, blackHoles);
+        ins(ms, meteors);
+        ins(frs, fuelRefills);
+        ins(gs, gems);
+    }
+
+    void ins(GameObject o, int n)
+    {
+        int r;
+        for (int i = 0; i <= n; i++)
+        {
+            r = Random.Range(0, grid.Count - 1);
+            Instantiate(o, grid[r], Quaternion.identity);
+            grid.RemoveAt(r);
+        }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
