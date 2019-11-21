@@ -1,5 +1,4 @@
 # TODO:
-- [ ] @wiktus22 @serniczek97 **divide tasks**
 - [x] No return from black holes @MaciejSkrabski
 - [ ] Collectibles - fuel, gems
 - [ ] ship uses up fuel
