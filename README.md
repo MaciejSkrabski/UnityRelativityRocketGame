@@ -1,5 +1,5 @@
-TODO BY FRIDAY:
-
+# TODO BY FRIDAY:
+- [ ] @wiktus22 @serniczek97 **divide tasks**
 - [ ] No return from black holes @MaciejSkrabski
 - [ ] Collectibles - fuel, gems
 - [ ] ship uses up fuel
