@@ -1,6 +1,6 @@
 # TODO BY FRIDAY:
 - [ ] @wiktus22 @serniczek97 **divide tasks**
-- [ ] No return from black holes @MaciejSkrabski
+- [x] No return from black holes @MaciejSkrabski
 - [ ] Collectibles - fuel, gems
 - [ ] ship uses up fuel
 - [ ] Buying ship upgrades for gems (shop menu!) - better engines (speed boost), guns (for shooting metheors), upgraded fuel tank (can hold more fuel) (upgrades visible on model, affect ship stats)
