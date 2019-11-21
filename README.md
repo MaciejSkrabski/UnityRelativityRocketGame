@@ -15,7 +15,6 @@
   - LANDED!
 - [ ] HUD (life, fuel, time left)
 - [ ] particle system on collision
-- [x] ship model @wiktus22
 - [ ] Disintegration effect when killed
 - [ ] Fix shader bug @MaciejSkrabski
 - [ ] Parallax effect @MaciejSkrabski
