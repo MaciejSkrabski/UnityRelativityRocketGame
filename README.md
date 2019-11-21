@@ -5,7 +5,8 @@
 - [ ] ship uses up fuel
 - [ ] Buying ship upgrades for gems (shop menu!) - better engines (speed boost), guns (for shooting metheors), upgraded fuel tank (can hold more fuel) (upgrades visible on model, affect ship stats)
 - [ ] sound design @MaciejSkrabski
-- [ ] metheors that can hit and damage your ship, can be destroyed by shooting @MaciejSkrabski
+- [x] meteors that can hit and damage your ship
+- [ ] destroying meteors by shooting
 - [x] Random map generation @MaciejSkrabski
 - [ ] Displaying information 
   - CRITICAL FUEL
