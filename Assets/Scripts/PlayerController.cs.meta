@@ -5,6 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - goal: {fileID: 2465638627097723655, guid: 731c2a92405d22795b01df96d55e8703, type: 3}
+  - Fireworks: {fileID: 5476755674454347585, guid: 189e45f8d01e6a0d5b8b895d72d5363a,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

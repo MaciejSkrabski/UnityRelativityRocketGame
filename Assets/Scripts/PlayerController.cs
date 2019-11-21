@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float maxdist;
     public float maxspeed;
     private bool landed=false;
+    public GameObject Fireworks;
 
     private Rigidbody rb;
     void Objective()
@@ -40,5 +41,19 @@ public class PlayerController : MonoBehaviour
         rb.AddRelativeForce(vertical * thrust);
         rb.AddRelativeTorque(Vector3.up * torque * turn);
 
+    }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            Explode(this.transform.position);
+        }
+
+    }
+    void Explode(Vector3 position)
+    {
+        GameObject firework = Instantiate(Fireworks, position, this.transform.rotation);
+        firework.GetComponent<ParticleSystem>().Play();
     }
 }
