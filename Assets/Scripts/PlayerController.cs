@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            AudioSource.PlayClipAtPoint(this.transform.position);
+            //AudioSource.PlayClipAtPoint(this.transform.position);
             if (collision.gameObject.name == "Black Hole Position(Clone)")
             {
                 this.health = 0;
