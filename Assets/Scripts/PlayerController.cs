@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,12 +36,16 @@ public class PlayerController : MonoBehaviour
     public GameObject gs;
     private List<Vector3> grid;
     private GameObject finish;
+    public AudioClip impact;
+
+    
 
     #endregion
 
     void Start()
-    {
+    { 
         rb = GetComponent<Rigidbody>();
+
         rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
         grid = new List<Vector3>();
@@ -110,8 +115,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            AudioSource.PlayClipAtPoint(this.transform.position);
             if (collision.gameObject.name == "Black Hole Position(Clone)")
             {
                 this.health = 0;
