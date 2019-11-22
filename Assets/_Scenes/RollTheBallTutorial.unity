@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.044414923, g: 0.041873932, b: 0.045860372, a: 1}
+  m_IndirectSpecularColor: {r: 0.04345821, g: 0.041858047, b: 0.044895597, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!54 &25656918 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5052902367051930620, guid: 4c8cfec47e4070f4f9e674f591693e6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5052902366171472451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &112841994
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,86 +613,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: size
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: planets
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: blackHoles
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: meteors
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: fuelRefills
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: gems
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 920336304, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
-        type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
-        type: 3}
-      propertyPath: size
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
         type: 3}
       propertyPath: planets
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
         type: 3}
       propertyPath: blackHoles
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
         type: 3}
       propertyPath: meteors
-      value: 28
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
         type: 3}
       propertyPath: fuelRefills
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
         type: 3}
-      propertyPath: ps
-      value: 
-      objectReference: {fileID: 7123250019116408350, guid: 5e0a662375485ab41b9639457d405357,
-        type: 3}
+      propertyPath: size
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
         type: 3}
-      propertyPath: bhs
+      propertyPath: finaltext
       value: 
-      objectReference: {fileID: 2928862251243722543, guid: bba6c88670c35db409c607d9d47751e1,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5052902367051930499, guid: 4c8cfec47e4070f4f9e674f591693e6b,
         type: 3}
-      propertyPath: ms
+      propertyPath: rb
       value: 
-      objectReference: {fileID: 7744044862766697670, guid: f076aa1218262d2418a354e9a4f5c832,
-        type: 3}
+      objectReference: {fileID: 25656918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c8cfec47e4070f4f9e674f591693e6b, type: 3}

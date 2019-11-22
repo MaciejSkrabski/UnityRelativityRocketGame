@@ -4,9 +4,14 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - goal: {fileID: 2465638627097723655, guid: 731c2a92405d22795b01df96d55e8703, type: 3}
+  - goal: {fileID: 5220421297930624483, guid: 731c2a92405d22795b01df96d55e8703, type: 3}
   - Fireworks: {fileID: 5476755674454347585, guid: 189e45f8d01e6a0d5b8b895d72d5363a,
       type: 3}
+  - ps: {fileID: 7123250019116408350, guid: 5e0a662375485ab41b9639457d405357, type: 3}
+  - bhs: {fileID: 2928862251243722543, guid: bba6c88670c35db409c607d9d47751e1, type: 3}
+  - ms: {fileID: 7744044862766697670, guid: f076aa1218262d2418a354e9a4f5c832, type: 3}
+  - frs: {instanceID: 0}
+  - gs: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
