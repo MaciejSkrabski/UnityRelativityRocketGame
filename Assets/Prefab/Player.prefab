@@ -236,6 +236,7 @@ MonoBehaviour:
   frs: {fileID: 0}
   gems: 0
   gs: {fileID: 0}
+  impact: {fileID: 0}
 --- !u!82 &82968721367467222
 AudioSource:
   m_ObjectHideFlags: 0
@@ -342,12 +343,13 @@ AudioSource:
   m_GameObject: {fileID: 5052902367051930617}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 03744d9c2b3e4844281f5145dc4b57e6,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4f69f52afbcb50d49b0c55d5cd8d91d9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

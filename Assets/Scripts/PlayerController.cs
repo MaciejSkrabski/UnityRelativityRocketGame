@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
@@ -36,7 +37,11 @@ public class PlayerController : MonoBehaviour
     public GameObject gs;
     private List<Vector3> grid;
     private GameObject finish;
-    public AudioClip impact;
+    public AudioClip impact; 
+    public Text healthText;
+    public Text gameText;
+    private AudioSource imp;
+    
 
     
 
@@ -44,6 +49,10 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     { 
+        imp = this.gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+        imp.playOnAwake = false;
+        imp.clip = impact;
+        healthText.text = "Health: " + health.ToString();
         rb = GetComponent<Rigidbody>();
 
         rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
@@ -88,6 +97,7 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(finish.transform.position, rb.transform.position) < maxdist && rb.velocity.magnitude < maxspeed)
             {
                 finaltext = "Landed!";
+                gameText.text = finaltext;
                 landed = true;
             }
 
@@ -99,9 +109,10 @@ public class PlayerController : MonoBehaviour
             if (health <= 0)
             {
                 rb.constraints = RigidbodyConstraints.FreezeAll;
-                this.finaltext = "Ship destroyed.";
+                this.finaltext = "Ship destroyed";
+                gameText.text = finaltext;
                 this.alive = false;
-                this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
             }
 
         }
@@ -115,10 +126,9 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        
+        imp.Play();
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //AudioSource.PlayClipAtPoint(this.transform.position);
             if (collision.gameObject.name == "Black Hole Position(Clone)")
             {
                 this.health = 0;
@@ -140,11 +150,9 @@ public class PlayerController : MonoBehaviour
         else force = vel;
         force = Mathf.Ceil(force);
 
-        Debug.Log("force:");
-        Debug.Log(force);
+
         this.health -= force;
-        Debug.Log("health:");
-        Debug.Log(this.health);
+        healthText.text = "Health: "+health.ToString();
 
     }
 
