@@ -17,3 +17,4 @@
 - [ ] Disintegration effect when killed
 - [ ] Fix shader bug @MaciejSkrabski
 - [ ] Parallax effect @MaciejSkrabski
+- [ ] Compiling for mobile
