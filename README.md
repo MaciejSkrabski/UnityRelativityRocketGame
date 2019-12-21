@@ -1,20 +1,11 @@
 # TODO:
-- [x] No return from black holes @MaciejSkrabski
 - [ ] Collectibles - fuel, gems
 - [ ] ship uses up fuel
 - [ ] Buying ship upgrades for gems (shop menu!) - better engines (speed boost), guns (for shooting metheors), upgraded fuel tank (can hold more fuel) (upgrades visible on model, affect ship stats)
-- [ ] sound design @MaciejSkrabski
-- [x] meteors that can hit and damage your ship
 - [ ] destroying meteors by shooting
-- [x] Random map generation @MaciejSkrabski
-- [ ] Displaying information 
-  - CRITICAL FUEL
-  - CRITICAL LIFE
-  - GAME OVER
-  - LANDED!
 - [ ] HUD (life, fuel, time left)
 - [ ] particle system on collision
 - [ ] Disintegration effect when killed
-- [ ] Fix shader bug @MaciejSkrabski
-- [ ] Parallax effect @MaciejSkrabski
+- [ ] Fix shader bug
+- [ ] Parallax effect
 - [ ] Compiling for mobile
